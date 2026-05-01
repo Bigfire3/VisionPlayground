@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-Finger-Cursor-Steuerung: Bewege deinen Desktop-Cursor mit der Zeigefingerspitze.
+Finger-Cursor-Steuerung: Bewege deinen Desktop-Cursor wie mit einem Touchpad.
 
-Nutzt MediaPipe Hand-Landmarks (Landmark 8 = INDEX_FINGER_TIP) und mappt die
-Position auf den Bildschirm. Pinch (Daumen + Zeigefinger nah beieinander)
-löst einen Mausklick aus.
+Nutzt MediaPipe Hand-Landmarks. Die Bewegung wird relativ (Touchpad-Style)
+über das Grundgelenk des Zeigefingers gesteuert. Pinch (Daumen + Zeigefingerspitze)
+löst einen Mausklick aus. Eine komplette Faust pausiert das Tracking ("Maus anheben").
 
 Steuerung:
   q / ESC  – Beenden
   +/-      – Smoothing-Faktor anpassen
-  r        – ROI zurücksetzen (auf Standard)
+  r        – Trackpad-Position (Relativer Nullpunkt) zurücksetzen
   h        – Linke oder rechte Hand auswählen
 
 Benötigt: opencv-python, mediapipe (>=0.10)

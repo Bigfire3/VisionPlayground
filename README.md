@@ -47,3 +47,25 @@ python scripts/view_gopro_mediapipe_tasks.py
 ```
 
 Das Script nutzt das Tasks-API, benötigt das .task-Modell und zeichnet einfache Landmarken/Verbindungen. Beende mit `q` oder ESC.
+
+---
+
+## Finger Cursor Control (Maus per Hand steuern)
+
+Verwandelt die Kamera in ein virtuelles, schwebendes Trackpad! Du kannst deinen Windows-Mauszeiger durch Handbewegungen steuern.
+
+```powershell
+python scripts/finger_cursor_control.py
+```
+
+**Features:**
+- **Relatives Tracking (Trackpad-Modus)**: Funktioniert überall im Bild, ohne starre "Region of Interest". Die Maus bewegt sich extrem flüssig basierend auf der Bewegung deiner Hand.
+- **Klicken & Drag-and-Drop**: Zeigefinger und Daumen zusammenführen (Pinch). Ein intelligenter Doppelklick-Stabilisator sorgt für fehlerfreies Klicken in Windows.
+- **Maus anheben / Pausieren**: Schließe deine Hand zu einer festen Faust (alle Finger eng eingekrümmt). Das Tracking pausiert, und du kannst die Hand neu positionieren (wie wenn du eine physische Maus anhebst).
+- **Glättung (Smoothing)**: Die Empfindlichkeit kann live mit den Tasten `+` und `-` angepasst werden.
+
+**Steuerung im Fenster:**
+- `h`: Wechsel zwischen linker und rechter Hand
+- `r`: Trackpad-Position (Relativer Nullpunkt) zurücksetzen
+- `+` / `-`: Smoothing erhöhen/verringern
+- `q` / `ESC`: Beenden
